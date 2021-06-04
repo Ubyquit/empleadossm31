@@ -14,7 +14,6 @@
         </thead>
         <tbody>
             <?php
-
             //variable de consulta mysql
             $consulta  = "SELECT 
             empleado.nombre as nombre_usuario, apellido1, apellido2, email, nif, status, departamento.nombre as departamento
