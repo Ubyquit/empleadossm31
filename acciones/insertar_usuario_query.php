@@ -10,6 +10,7 @@ $apellido2 = $_POST['apellido2'];
 // Crear contraseña random
 $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
  
+//https://code.tutsplus.com/es/tutorials/generate-random-alphanumeric-strings-in-php--cms-32132
 function generate_string($input, $strength = 16) {
     $input_length = strlen($input);
     $random_string = '';
