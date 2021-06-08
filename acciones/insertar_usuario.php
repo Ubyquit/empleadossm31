@@ -24,8 +24,8 @@ if ($varsession == '' || $varsession == NULL) {
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://use.fontawesome.com/5001448291.js"></script>
-    <title>Panel de usuarios</title>
+
+    <title>Creación de usuarios</title>
 </head>
 
 <body>
@@ -33,15 +33,30 @@ if ($varsession == '' || $varsession == NULL) {
     <?php include "../include/navbar.php"; ?>
     <!--Final de Navbar-->
 
-    <h3>Panel de usuarios</h3>
+    <h3>Creación de usuarios</h3>
 
-    <div>
-    <a class="btn btn-primary" href="../acciones/insertar_usuario.php" role="button">Crear nuevo usuario</a>
+    <div class="container">
+        <form action="insertar_usuario_query.php" method="post">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+                <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nombres</label>
+                <input type="text" class="form-control" name="nombre" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Apellido paterno</label>
+                <input type="text" class="form-control" name="apellido1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Apellido materno</label>
+                <input type="text" class="form-control" name="apellido2" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
     </div>
-
-    <!--Inicio tabla de usuarios-->
-    <?php include "../include/tabla_usuarios.php"; ?>
-    <!--Final tabla de usuarios-->
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

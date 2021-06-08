@@ -10,15 +10,23 @@
                 <th scope="col">NIF</th>
                 <th scope="col">Departamento</th>
                 <th scope="col">Estatus</th>
+                <th scope="col">Eliminar</th>
             </tr>
         </thead>
         <tbody>
             <?php
             //variable de consulta mysql
             $consulta  = "SELECT 
-            empleado.nombre as nombre_usuario, apellido1, apellido2, email, nif, status, departamento.nombre as departamento
+            empleado.nombre as nombre_usuario,
+            empleado.codigo as codigo_empleado,
+            apellido1, 
+            apellido2, 
+            email, 
+            nif, 
+            status,
+            departamento.nombre as departamento
             FROM empleado 
-            inner join departamento 
+            left join departamento 
             on empleado.codigo_departamento = departamento.codigo";
             $conexion = mysqli_query($mysqli, $consulta);
             $contador = 1;
@@ -40,6 +48,7 @@
                         }
                         ?>
                     </td>
+                    <td><a href="../acciones/eliminar_usuario.php?id_usuario=<?php echo $fila['codigo_empleado']; ?>"><span style="font-size: 1em; color: red;"><i class="fa fa-lock" aria-hidden="true"></i></span></a></td>
                 </tr>
             <?php
                 $contador++;
