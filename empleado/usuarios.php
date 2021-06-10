@@ -33,13 +33,19 @@ if ($varsession == '' || $varsession == NULL) {
     <!--Inicio de Navbar-->
     <?php include "../include/navbar.php"; ?>
     <!--Final de Navbar-->
+    <div class="container">
+        <h3>Panel de usuarios</h3>
 
-    <h3>Panel de usuarios</h3>
-
-    <div>
-    <a class="btn btn-primary" href="../acciones/insertar_usuario.php" role="button">Crear nuevo usuario</a>
+        <div>
+            <a class="btn btn-primary" href="../acciones/insertar_usuario.php" role="button">Crear nuevo usuario</a>
+        </div>
+        <br>
+        <form class="d-flex" action="" method="POST">
+            <input class="form-control me-2" type="search" placeholder="Buscar" name="search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        <br>
     </div>
-
     <!--Inicio tabla de usuarios-->
     <?php include "../include/tabla_usuarios.php"; ?>
     <!--Final tabla de usuarios-->

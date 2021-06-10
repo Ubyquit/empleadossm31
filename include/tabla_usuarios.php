@@ -15,6 +15,8 @@
         </thead>
         <tbody>
             <?php
+            // Variable Buscador
+            $buscador = $_POST['search'];
             //variable de consulta mysql
             $consulta  = "SELECT 
             empleado.nombre as nombre_usuario,
@@ -27,7 +29,11 @@
             departamento.nombre as departamento
             FROM empleado 
             left join departamento 
-            on empleado.codigo_departamento = departamento.codigo";
+            on empleado.codigo_departamento = departamento.codigo 
+            WHERE empleado.nombre like '%$buscador%'
+            or empleado.apellido1 like '%$buscador%'
+            or empleado.apellido2 like '%$buscador%'
+            or empleado.email like '%$buscador%'";
             $conexion = mysqli_query($mysqli, $consulta);
             $contador = 1;
             while ($fila = mysqli_fetch_array($conexion)) {
